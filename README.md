@@ -23,6 +23,12 @@ The objective of this analysis is to identify the core behavioral differences be
 ## 3. Data Processing & Cleaning Documentation
 To ensure data integrity, structural anomalies were cleaned using BigQuery SQL. Legacy schema fields (`Subscriber` and `Customer`) were standardized to match modern business terminology (`member` and `casual`). Trips under 1 minute (potential false dockings) and over 24 hours (lost/stolen assets) were filtered out.
 
+The Data Presentation: https://docs.google.com/presentation/d/1OD9sBvTApkjMsw83J4v4a06j2vw690XF9XVEbLAyBaQ/edit?usp=sharing
+
+View the Interactive Tableau Dashboard Here: https://public.tableau.com/views/CyclisticBike-ShareAnalysisUserBehaviorInsights2014/Dashboard?:language=en-US&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link
+
+Final Recommendations: We have reached the peak of our journey, and here is our path forward to drive revenue. First, we need to create a 'Weekend Warrior' annual pass. Casuals don't want a full membership because they don't commute on Tuesdays, so let’s give them a tier that fits their weekend habits. Second, we should use geo-targeted mobile app notifications. When a casual rider passes the 20-minute mark near a park or waterfront on a sunny Saturday, we hit them with an in-app prompt showing how much money they would save today by converting to a member. Finally, our digital marketing creative needs to pivot: stop showing people commuting in suits to attract casuals; show them enjoying a weekend cruise. If we implement these steps, we can smoothly convert our highest-value casual riders into recurring annual revenue. Thank you, and I’d love to open the floor to your questions.
+
 ### SQL Pipeline Script:
 ```sql
 CREATE OR REPLACE TABLE `cyclistic_data_2014.combined_trips_2014` AS
@@ -51,6 +57,3 @@ FROM
 WHERE 
   tripduration >= 60 
   AND tripduration <= 86400;
-View the Interactive Tableau Dashboard Here: https://public.tableau.com/views/CyclisticBike-ShareAnalysisUserBehaviorInsights2014/Dashboard?:language=en-US&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link
-
-Final Recommendations: We have reached the peak of our journey, and here is our path forward to drive revenue. First, we need to create a 'Weekend Warrior' annual pass. Casuals don't want a full membership because they don't commute on Tuesdays, so let’s give them a tier that fits their weekend habits. Second, we should use geo-targeted mobile app notifications. When a casual rider passes the 20-minute mark near a park or waterfront on a sunny Saturday, we hit them with an in-app prompt showing how much money they would save today by converting to a member. Finally, our digital marketing creative needs to pivot: stop showing people commuting in suits to attract casuals; show them enjoying a weekend cruise. If we implement these steps, we can smoothly convert our highest-value casual riders into recurring annual revenue. Thank you, and I’d love to open the floor to your questions.
