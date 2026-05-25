@@ -23,12 +23,6 @@ The objective of this analysis is to identify the core behavioral differences be
 ## 3. Data Processing & Cleaning Documentation
 To ensure data integrity, structural anomalies were cleaned using BigQuery SQL. Legacy schema fields (`Subscriber` and `Customer`) were standardized to match modern business terminology (`member` and `casual`). Trips under 1 minute (potential false dockings) and over 24 hours (lost/stolen assets) were filtered out.
 
-The Data Presentation: https://docs.google.com/presentation/d/1OD9sBvTApkjMsw83J4v4a06j2vw690XF9XVEbLAyBaQ/edit?usp=sharing
-
-View the Interactive Tableau Dashboard Here: https://public.tableau.com/views/CyclisticBike-ShareAnalysisUserBehaviorInsights2014/Dashboard?:language=en-US&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link
-
-Final Recommendations: We have reached the peak of our journey, and here is our path forward to drive revenue. First, we need to create a 'Weekend Warrior' annual pass. Casuals don't want a full membership because they don't commute on Tuesdays, so let’s give them a tier that fits their weekend habits. Second, we should use geo-targeted mobile app notifications. When a casual rider passes the 20-minute mark near a park or waterfront on a sunny Saturday, we hit them with an in-app prompt showing how much money they would save today by converting to a member. Finally, our digital marketing creative needs to pivot: stop showing people commuting in suits to attract casuals; show them enjoying a weekend cruise. If we implement these steps, we can smoothly convert our highest-value casual riders into recurring annual revenue. Thank you, and I’d love to open the floor to your questions.
-
 ### SQL Pipeline Script:
 ```sql
 CREATE OR REPLACE TABLE `cyclistic_data_2014.combined_trips_2014` AS
@@ -57,3 +51,28 @@ FROM
 WHERE 
   tripduration >= 60 
   AND tripduration <= 86400;
+
+```
+## 4. Key Findings & Data Story (Analyze & Share)
+
+📊 **View the Interactive Tableau Dashboard Here** - https://public.tableau.com/views/CyclisticBike-ShareAnalysisUserBehaviorInsights2014/Dashboard?:language=en-US&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link
+
+**The Data Presentation:** https://docs.google.com/presentation/d/1OD9sBvTApkjMsw83J4v4a06j2vw690XF9XVEbLAyBaQ/edit?usp=sharing
+
+**Finding 1:** The Commuter Peak (Hourly Trends)
+Insight: Annual members exhibit extreme volume spikes at 8:00 AM and 5:00 PM, matching typical corporate rush hours. This indicates their primary usage is utilitarian (work/school commuting).
+Casual Behavior: Casual riders show no morning spike; instead, their usage builds a smooth, steady afternoon curve peaking between 12:00 PM and 3:00 PM.
+
+**Finding 2:** The Weekend Takeover (Weekly Trends)Insight: Monday through Friday, annual members heavily dominate total system volume.
+Casual Behavior: On Saturdays and Sundays, member activity drops slightly while casual rider counts surge significantly, matching or exceeding member volume. Casuals use the network for leisure and weekend recreation.
+
+**Finding 3:** The Value Gap (Average Duration)Insight: While members take more frequent individual trips, their rides are highly calculated and short (averaging ~12 minutes).  Casual Behavior: Casual riders keep bikes checked out for an average of nearly 30 minutes per trip—three times longer than members—indicating deep experiential and leisure engagement with the fleet.
+
+## 5. Strategic Recommendations (Act)
+Based directly on the data insights above, here are the top three strategic recommendations to maximize annual memberships:
+
+**The "Weekend Warrior" Annual Membership:** Since casual rider volume spikes drastically on Saturdays and Sundays, introduce an affordable, weekend-only subscription tier. This lowers the entry barrier for leisure riders who do not need a weekday commuter pass.
+
+**Contextual App Promotions Near Leisure Hotspots:** Leverage real-time trip length metrics. When a casual user exceeds a 20-minute ride on a weekend afternoon, trigger a mobile app notification offering an instant discount on an annual membership upgrade.
+
+**Refocused Marketing Creative Asset Design:** Pivot digital advertising away from professional, workplace utility images. Design creative campaigns showcasing weekend exploration, health, fitness, and lifestyle benefits to speak directly to the emotional drivers of casual users.
