@@ -1,0 +1,19 @@
+SELECT
+
+  member_casual,
+
+  hour_of_day,
+
+  COUNT(trip_id) AS total_rides
+
+FROM
+
+  `project-242eb54f-3251-46ae-af5.cyclistic_data_2014.combined_trips_2014`
+
+GROUP BY
+
+  member_casual, hour_of_day
+
+ORDER BY
+
+  member_casual, hour_of_day;
