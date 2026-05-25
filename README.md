@@ -4,7 +4,7 @@ Introduction & Business Task: The objective is to identify key behavioral differ
 
 The Tech Stack: Google Cloud Storage, Google BigQuery (SQL), and Tableau Public.
 
-The Data Story (Visuals): Insert screenshots of your three Tableau charts. Under each chart, write a 2-sentence bullet point summarizing the "Commuter Peak," the "Weekend Takeover," and the "Value Gap."
+The Data Story (Visuals):
 
 View the Interactive Tableau Dashboard Here: https://public.tableau.com/views/CyclisticBike-ShareAnalysisUserBehaviorInsights2014/Dashboard?:language=en-US&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link
 
