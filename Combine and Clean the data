@@ -1,63 +1,32 @@
 CREATE OR REPLACE TABLE `project-242eb54f-3251-46ae-af5.cyclistic_data_2014.combined_trips_2014` AS
-
 WITH raw_combined AS (
-
-  SELECT trip_id, starttime, stoptime, tripduration, usertype
-
+  SELECT trip_id, starttime, stoptime, tripduration, usertype 
   FROM `project-242eb54f-3251-46ae-af5.cyclistic_data_2014.trips_q1q2`
-
   UNION ALL
-
-  SELECT trip_id, starttime, stoptime, tripduration, usertype
-
+  SELECT trip_id, starttime, stoptime, tripduration, usertype 
   FROM `project-242eb54f-3251-46ae-af5.cyclistic_data_2014.trips_q3q4`
-
 )
-
-SELECT
-
+SELECT 
   trip_id,
-
   -- Standardize legacy user types to match the case study goals
-
-  CASE
-
+  CASE 
     WHEN usertype = 'Subscriber' THEN 'member'
-
     WHEN usertype = 'Customer' THEN 'casual'
-
-    ELSE usertype
-
+    ELSE usertype 
   END AS member_casual,
-
- 
-
+  
   TIMESTAMP(starttime) AS started_at,
-
   TIMESTAMP(stoptime) AS ended_at,
-
- 
-
+  
   -- Calculate ride length in minutes from tripduration (which is in seconds)
-
   ROUND(tripduration / 60, 2) AS ride_length_minutes,
-
- 
-
+  
   -- Time extractions for the analysis phase
-
   EXTRACT(DAYOFWEEK FROM TIMESTAMP(starttime)) AS day_of_week,
-
   EXTRACT(MONTH FROM TIMESTAMP(starttime)) AS month,
-
   EXTRACT(HOUR FROM TIMESTAMP(starttime)) AS hour_of_day
-
-FROM
-
+FROM 
   raw_combined
-
-WHERE
-
+WHERE 
   tripduration >= 60 -- Removes trips under 1 minute (accidental docks/tests)
-
   AND tripduration <= 86400; -- Removes trips over 24 hours (stolen or lost bikes)
