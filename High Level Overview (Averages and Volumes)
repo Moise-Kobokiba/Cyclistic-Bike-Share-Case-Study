@@ -1,0 +1,15 @@
+SELECT
+
+  member_casual,
+
+  COUNT(trip_id) AS total_rides,
+
+  ROUND(AVG(ride_length_minutes), 2) AS average_ride_length_minutes
+
+FROM
+
+  `project-242eb54f-3251-46ae-af5.cyclistic_data_2014.combined_trips_2014`
+
+GROUP BY
+
+  member_casual;
