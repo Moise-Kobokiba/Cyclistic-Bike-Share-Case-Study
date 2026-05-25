@@ -57,7 +57,7 @@ WHERE
 
 📊 **View the Interactive Tableau Dashboard Here** - https://public.tableau.com/views/CyclisticBike-ShareAnalysisUserBehaviorInsights2014/Dashboard?:language=en-US&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link
 
-**The Data Presentation:** https://docs.google.com/presentation/d/1OD9sBvTApkjMsw83J4v4a06j2vw690XF9XVEbLAyBaQ/edit?usp=sharing
+**The Data Presentation:** Data-Driven Growth_ Converting Casual Bike Riders to Annual Members.pdf
 
 ![Tableau Dashboard](dashboard.png)
 
