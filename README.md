@@ -4,7 +4,7 @@ Introduction & Business Task: The objective is to identify key behavioral differ
 
 The Tech Stack: Google Cloud Storage, Google BigQuery (SQL), and Tableau Public.
 
-The Data Story (Presentatio): https://docs.google.com/presentation/d/1OD9sBvTApkjMsw83J4v4a06j2vw690XF9XVEbLAyBaQ/edit?usp=sharing
+The Data Story (Presentation): https://docs.google.com/presentation/d/1OD9sBvTApkjMsw83J4v4a06j2vw690XF9XVEbLAyBaQ/edit?usp=sharing
 
 View the Interactive Tableau Dashboard Here: https://public.tableau.com/views/CyclisticBike-ShareAnalysisUserBehaviorInsights2014/Dashboard?:language=en-US&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link
 
