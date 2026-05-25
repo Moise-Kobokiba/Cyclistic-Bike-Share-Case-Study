@@ -59,6 +59,8 @@ WHERE
 
 **The Data Presentation:** https://docs.google.com/presentation/d/1OD9sBvTApkjMsw83J4v4a06j2vw690XF9XVEbLAyBaQ/edit?usp=sharing
 
+![Tableau Dashboard](dashboard.png)
+
 **Finding 1:** The Commuter Peak (Hourly Trends)
 Insight: Annual members exhibit extreme volume spikes at 8:00 AM and 5:00 PM, matching typical corporate rush hours. This indicates their primary usage is utilitarian (work/school commuting).
 Casual Behavior: Casual riders show no morning spike; instead, their usage builds a smooth, steady afternoon curve peaking between 12:00 PM and 3:00 PM.
